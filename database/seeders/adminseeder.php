@@ -18,7 +18,19 @@ class adminseeder extends Seeder
             'email'=>'reno@gamil.com',
             'role'=>'adminweb',
             'status'=>'aktif',
-            'password'=>'123',
+            'password'=>'1234',
+            'gambar'=>'as',
+            'logo'=>'asd',
+            'kode_pos'=>'12332',
+            'koordinat'=>'sad12',
+        ]);
+
+        User::create([
+            'name'=>'udin',
+            'email'=>'asd@gamil.com',
+            'role'=>'admindesa',
+            'status'=>'aktif',
+            'password'=>'1234',
             'gambar'=>'as',
             'logo'=>'asd',
             'kode_pos'=>'12332',
