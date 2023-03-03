@@ -28,6 +28,7 @@
                                 <table class="table table-bordered border-primary">
                                     <label for="inputNanme4" class="form-label">Contoh</label>
                                     <div class="col-4 mb-2">
+                                        
                                         <img src="{{ asset('gambarstrukturdesa/' . $data->gambar) }}" alt=""
                                             title="" width="200px"> <br><br>
                                     </div>

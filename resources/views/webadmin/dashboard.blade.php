@@ -58,7 +58,7 @@
           </div>
            <div class="ps-3">
              <a href="data-admin.html"> <h6>Panding</h6> </a>
-             <h3>0</h3>
+             <h3>{{ $jumlah_pending }}</h3>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="ps-3">
           <a href="data-admin.html"> <h6>Jumlah Desa</h6> </a>
-          <h3>0</h3>
+          <h3>{{ $jumlah_data }}</h3>
           </div>
         </div>
       </div>

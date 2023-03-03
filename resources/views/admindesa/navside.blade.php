@@ -384,6 +384,7 @@
      {{-- cdn sweetalert --}}
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
      @yield('script')
+     @yield('editor')
      {{-- jquery cdn sweetalert --}}
  
     

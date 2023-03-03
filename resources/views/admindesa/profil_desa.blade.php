@@ -1,5 +1,6 @@
 @extends('admindesa.navside')
 @section('isi')
+@include('sweetalert::alert')
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -31,23 +32,23 @@
                                                 <label class="d-block" for="">Gambar 1</label>
                                                 <img src="{{ asset('storage/gambarprof/' . $data->gambar1) }}"
                                                     class="img-fluid rounded-start col-10 mx-auto" alt="..."
-                                                    style="border-radius: 6px;">
+                                                    style="border-radius: 6px; width:80%;">
                                                 <input class="ms-0" type="file" style="margin: 3% 0% 3% 0%;"
                                                     name="gambar1">
                                             </div>
                                             <div class="col-3 mx-auto">
                                                 <label for="" class="d-block">Gambar 2</label>
-                                                <img src="{{ asset('storage/gambarprof/' . $data->gambar2) }}"
+                                                <img src="{{ asset('storage/' . $data->gambar2) }}"
                                                     class="img-fluid rounded-start col-10 mx-auto" alt="..."
-                                                    style="border-radius: 6px;">
+                                                    style="border-radius: 6px; width:80%;">
                                                 <input class="ms-0" type="file" style="margin: 3% 0% 3% 0%;"
                                                     name="gambar2">
                                             </div>
                                             <div class="col-3 mx-auto">
                                                 <label for="" class="d-block">Gambar 3</label>
-                                                <img src="{{ asset('storage/gambarprof/' . $data->gambar3) }}"
+                                                <img src="{{ asset('storage/' . $data->gambar3) }}"
                                                     class="img-fluid rounded-start col-10 mx-auto" alt="..."
-                                                    style="border-radius: 6px;">
+                                                    style="border-radius: 6px; width:80%;">
                                                 <input class="ms-0" type="file" style="margin: 3% 0% 3% 0%;"
                                                     name="gambar3">
                                             </div>
@@ -58,25 +59,19 @@
                                 <div class="row mb-5">
                                     <label for="inputText" class="col-sm-2 col-form-label"><b>Visi Desa :</b></label>
                                     <div class="col-sm-10">
-                                        <h6 class="mb-4 mt-3" for="" style="font-size: 13px">{{ $data->visi }}
-                                        </h6>
-                                        <textarea class="form-control" placeholder="" id="floatingTextarea" style="height: 100px;" name="visi"></textarea>
+                                        <textarea class="form-control" placeholder="" id="floatingTextarea" style="height: 100px;" name="visi">{{ $data->visi }}</textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-5">
                                     <label for="inputEmail" class="col-sm-2 col-form-label"><b>Misi Desa :</b></label>
                                     <div class="col-sm-10">
-                                        <h6 class="mb-4 mt-3" for="" style="font-size: 13px">{{ $data->misi }}
-                                        </h6>
-                                        <textarea class="form-control" placeholder="" id="floatingTextarea" style="height: 100px;" name="misi"></textarea>
+                                        <textarea class="form-control" placeholder="" id="floatingTextarea" style="height: 100px;" name="misi">{{ $data->misi }}</textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-5">
                                     <label for="inputPassword" class="col-sm-2 col-form-label"><b>Sejarah Desa :</b></label>
                                     <div class="col-sm-10">
-                                        <h6 class="mb-4 mt-3" for="" style="font-size: 13px">{{ $data->sejarah }}
-                                        </h6>
-                                        <textarea class="form-control" placeholder="" id="floatingTextarea" style="height: 100px;" name="sejarah"></textarea>
+                                        <textarea class="form-control" id="editor" name="sejarah" cols="30" rows="10" placeholder="Tuliskan isi pikiranmu...">{!! $data->sejarah !!}</textarea>
                                     </div>
                                 </div>
 
@@ -148,4 +143,10 @@
         </section>
 
     </main><!-- End #main -->
+@endsection
+@section('editor')
+    <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+       CKEDITOR.replace('editor');
+    </script>
 @endsection

@@ -125,11 +125,10 @@
 
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                <button type="submit" class="btn btn-primary">Edit</button>
                             </div>
                         </form><!-- Vertical Form -->
-                        <a href="/data_penduduk"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                        <a href="/data_penduduk"> <button type="submit" class="btn btn-danger">Kembali</button></a>
 
                     </div>
                 </div>

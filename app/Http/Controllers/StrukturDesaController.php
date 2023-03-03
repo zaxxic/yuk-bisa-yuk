@@ -13,7 +13,7 @@ class StrukturDesaController extends Controller
     public function strukturdesa()
     {
         // $data = lembaga_structure::first();
-        $data = lembaga_structure::where('user_id',Auth::user()->id)->paginate(10);
+        $data=lembaga_structure::first();
         return view('admindesa.struktur_desa', compact('data'));
     }
     public function updatestrukturdesa(Request $request)
