@@ -19,8 +19,8 @@
           <div class="card">
 
             <div class="card-body">
-              <h5 class="card-title">Data UMKM</h5>  <a href="{{ route('products.create') }}"><button class="btn btn-primary mb-3" style="font-size: 13px;">Tambah Produk</button></a>
-              <input type="text" class="form-control mb-3" placeholder="Search&hellip;">
+              <h5 class="card-title">Data UMKM</h5><input type="text" class="form-control mb-3" placeholder="Search&hellip;">  <a href="{{ route('products.create') }}"><button class="btn btn-primary mb-3" style="font-size: 13px;">Tambah Produk</button></a>
+              
 
 
 
@@ -34,10 +34,10 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Details</th>
-            <th width="280px">Action</th>
+            <th>Gambar Produk</th>
+            <th>Nama Produk</th>
+            <th>Jenis Produk</th>
+            <th width="280px">Aksi</th>
         </tr>
         @foreach ($products as $product)
         <tr>
@@ -62,4 +62,6 @@
     </table>
   
     {!! $products->links() !!}
+</section>
+</main>
 @endsection

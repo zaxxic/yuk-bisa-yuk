@@ -37,6 +37,7 @@
                 </div>
                  <div class="ps-3">
                    <a href="struktur-pkk.html"> <h6>Struktur PKK</h6> </a>
+                   <h3>{{ $jumlah_pkk }}</h3>
                 </div>
               </div>
             </div>
@@ -67,6 +68,7 @@
                 </div>
                  <div class="ps-3">
                  <a href="struktur-desa.html"><h6>Struktur Desa</h6></a>
+                 <h3>{{ $jumlah_struktur }}</h3>
                 </div>
               </div>
             </div>
@@ -90,7 +92,8 @@
         ></span>
       </div>
        <div class="ps-3">
-         <a href="struktur-karang.html"> <h6>Struktur Karang Taruna</h6> </a>
+         <a href="struktur-karang.html"> <h6>Karang-Taruna</h6> </a>
+         <h3>{{ $jumlah_kt }}</h3>
       </div>
     </div>
   </div>
@@ -146,7 +149,7 @@
                 </div>
                  <div class="ps-3">
                    <a href="data-penduduk.html"> <h6>Data Penduduk</h6> </a>
-                   <h3>0</h3>
+                   <h3>{{ $jumlah_penduduk }}</h3>
                 </div>
               </div>
             </div>
@@ -172,7 +175,7 @@
               </div>
               <div class="ps-3">
                 <a href="umkm.html"> <h6>UMKM</h6> </a>
-                <h3>0</h3>
+                <h3>{{ $jumlah_product }}</h3>
                 </div>
               </div>
             </div>
@@ -204,7 +207,7 @@
       </div>
        <div class="ps-3">
         <a href="berita.html"> <h6>Berita Desa</h6></a>
-        <h3>0</h3>
+        <h3>{{ $jumlah_berita }}</h3>
       </div>
     </div>
   </div>
@@ -232,7 +235,7 @@
       </div>
       <div class="ps-3">
        <a href="peraturan.html"> <h6>Peraturan Desa</h6></a>
-       <h3>0</h3>
+       <h3>{{ $jumlah_peraturan }}</h3>
       </div>
     </div>
   </div>
