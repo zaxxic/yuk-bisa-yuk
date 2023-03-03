@@ -79,7 +79,7 @@ Route::get('/tampilpenduduk/{id}',[DataPendudukController::class, 'tampilpendudu
 Route::post('/updatependuduk/{id}',[DataPendudukController::class, 'updatependuduk'])->name('updatependuduk');
 Route::get('/deletependuduk/{id}',[DataPendudukController::class, 'deletependuduk'])->name('deletependuduk');
 
-// pariwisata
+// pariwisatas
 Route::get('/pariwisata',[PariwisataController::class,'pariwisata'])->name('pariwisata');
 Route::get('/tambah_pariwisata',[PariwisataController::class,'tambahpariwisata'])->name('tambah_pariwisata');
 Route::post('/uploadpariwisata',[PariwisataController::class,'uploadpariwisata'])->name('uploadpariwisata');
