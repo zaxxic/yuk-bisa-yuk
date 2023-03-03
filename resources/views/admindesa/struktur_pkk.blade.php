@@ -56,7 +56,7 @@
                                             <td>{{ $row->nama }}</td>
                                              <td><img src={{ asset('storage/' . $row->gambar) }} alt=""
                                                 title="" width="100px"></td>
-                                            <td><a href="storage/gambarpkk/{{ $row->id }}"><button class="button-79"
+                                            <td><a href="tampilpkk/{{ $row->id }}"><button class="button-79"
                                                         role="button">Edit</button></a>
 
                                                 @if ($row->jabatans->id == 5)

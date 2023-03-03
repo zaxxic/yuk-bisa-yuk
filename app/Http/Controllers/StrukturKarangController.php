@@ -17,16 +17,14 @@ class StrukturKarangController extends Controller
     public function strukturkarang()
     {
         $jabatan = Jabatan::all();
-        $data = kt_structure::paginate(8);
-        $data->user_id = Auth::user()->id;
-        $data->save();
+        $data = kt_structure::where('user_id',Auth::user()->id)->paginate(10);
         return view('admindesa.struktur_karang', compact('data', 'jabatan'));
     }
     public function tambahanggota(){
         $id = 5;
         $jabatan = Jabatan::find($id);
         
-        return view('admindesa.tambah-anggota', compact('data', 'jabatan'));
+        return view('admindesa.tambah-anggota', compact('jabatan'));
     }
 
     public function insertanggota(Request $request){
@@ -43,6 +41,7 @@ class StrukturKarangController extends Controller
             'gambar' => $gambar,
         ]);
         $data->user_id = Auth::user()->id;
+        $data->save();
         alert()->success('Sukses','Data berhasil di tambahakan');
         return redirect('struktur_karang');
     }

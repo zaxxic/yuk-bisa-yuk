@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kt_structure;
+use App\Models\lembaga_structure;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ActivationMail;
 use App\Mail\kirimEmail;
@@ -90,7 +92,34 @@ class DataAdminController extends Controller
             'gambar' => 'contoh.png',
             
         ]);
-     
+        $user = lembaga_structure::create([
+            'user_id' => $id,
+            'gambar' => 'struktur.png',
+        ]);
+        $user = kt_structure::create([
+            'user_id' => $id,
+            'id_jabatan' => '1',
+            'nama' => 'contoh nama',
+            'gambar' => 'contohgam.png',
+        ]);
+        $user = kt_structure::create([
+            'user_id' => $id,
+            'id_jabatan' => '2',
+            'nama' => 'contoh nama',
+            'gambar' => 'contohgam.png',
+        ]);
+        $user = kt_structure::create([
+            'user_id' => $id,
+            'id_jabatan' => '3',
+            'nama' => 'contoh nama',
+            'gambar' => 'contohgam.png',
+        ]);
+        $user = kt_structure::create([
+            'user_id' => $id,
+            'id_jabatan' => '4',
+            'nama' => 'contoh nama',
+            'gambar' => 'contohgam.png',
+        ]);
 
 
     }
