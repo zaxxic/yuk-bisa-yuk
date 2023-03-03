@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('desa_news', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('profile_id')->nullable();
-            $table->foreign('profile_id')
+            $table->foreignId('user_id')->nullable();
+            $table->foreign('user_id')
             ->references('id')
-            ->on('desa_profiles')
+            ->on('users')
             ->onDelete('restrict')
             ->onUpdate('restrict');
             $table->string('judul');
