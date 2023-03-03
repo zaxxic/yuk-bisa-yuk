@@ -21,10 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call([
             adminseeder::class,
             JabatanSeeder::class,
-            PKKSeeder::class,
-            KTSeeder::class,
-            StrukturDesaSeeder::class,
-            ProfilDesaSeeder::class
         ]);
     }
 
