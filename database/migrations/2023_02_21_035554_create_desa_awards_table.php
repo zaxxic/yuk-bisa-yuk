@@ -20,13 +20,10 @@ return new class extends Migration
             ->onDelete('restrict')
             ->onUpdate('restrict');
             $table->string('judul');
+            $table->string('subjudul');
             $table->date('tanggal');
-            $table->string('gambar1');
-            $table->string('gambar2');
-            $table->string('gambar3');
-            $table->string('paragraf1');
-            $table->string('paragraf2');
-            $table->string('paragraf3');
+            $table->string('gambar');
+            $table->string('isi');
             $table->timestamps();
         });
     }
