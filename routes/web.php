@@ -46,7 +46,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/deleteadmin/{id}', [DataAdminController::class, 'deleteadmin'])->name('deleteadmin');
         Route::get('/user/{id}', [DataAdminController::class, 'show'])->name('user.show');
         Route::get('/cek', [DataAdminController::class, 'lihat']);
-    
+
 
     });
 
@@ -123,7 +123,7 @@ Route::post('/updatepkk/{id}',[StrukturPKKController::class, 'updatepkk'])->name
 Route::get('/deletepkk/{id}',[StrukturPKKController::class, 'deletepkk'])->name('deletepkk');
 
 //data peraturan
-Route::get('/peraturan',[PeraturanController::class,'peraturan'])->name('tambahperaturan');
+Route::get('/peraturan',[PeraturanController::class,'peraturan'])->name('peraturan');
 Route::get('/tambahperaturan',[PeraturanController::class,'tambahperaturan'])->name('tambahperaturan');
 Route::post('/insertperaturan',[PeraturanController::class, 'insertperaturan'])->name('insertperaturan');
 Route::get('/tampilperaturan/{id}',[PeraturanController::class, 'tampilperaturan'])->name('tampilperaturan');
@@ -141,8 +141,8 @@ Route::resource('products', ProductController::class);
 
 
 
-        
-        
+
+
 
 
     });
