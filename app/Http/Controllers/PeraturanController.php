@@ -13,7 +13,7 @@ class PeraturanController extends Controller
     public function peraturan()
     {
         // $data = desa_rule::latest()->paginate(3);
-        $data = desa_rule::where('user_id',Auth::user()->id)->paginate(5);
+        $data = desa_rule::where('user_id',Auth::user()->id)->paginate(8);
         return view('admindesa.peraturan', compact('data'));
     }
     public function tambahperaturan(){

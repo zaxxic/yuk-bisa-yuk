@@ -35,7 +35,7 @@
                                 <button type="reset" class="btn btn-secondary">Reset</button>
                             </div>
                         </form><!-- Vertical Form -->
-                        <a href="/data_desa"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                        <a href="/peraturan"> <button class="btn btn-danger"> Back</button></a>
 
                     </div>
                 </div>

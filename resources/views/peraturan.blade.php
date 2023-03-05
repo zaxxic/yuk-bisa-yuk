@@ -20,7 +20,7 @@
 
             <div class="card-body">
               <input type="text" class="form-control mb-1 mt-3" placeholder="Search&hellip;">
-              <h5 class="card-title">Peraturan Desa</h5>  <a href="/tambahperaturan"><button style="font-size: 12px;" class="btn btn-primary mb-3">Tambah Peraturan</button></a>
+              <h5 class="card-title">Peraturan Desa</h5>  <a href="/tambahperaturan"><button style="font-size: 21px;" class="btn btn-primary mb-3">Tambah Peraturan</button></a>
 
 
 
