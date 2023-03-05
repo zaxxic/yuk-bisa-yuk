@@ -23,7 +23,6 @@ class StrukturKarangController extends Controller
     public function tambahanggota(){
         $id = 5;
         $jabatan = Jabatan::find($id);
-        
         return view('admindesa.tambah-anggota', compact('jabatan'));
     }
 
@@ -63,7 +62,6 @@ class StrukturKarangController extends Controller
             'nama' => $request->nama,
             'gambar' => $gambar,
         ]);
-
         alert()->success('Sukses','Data berhasil di edit');
         return redirect('struktur_karang');
     }

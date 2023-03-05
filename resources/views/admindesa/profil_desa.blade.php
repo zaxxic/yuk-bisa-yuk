@@ -30,9 +30,9 @@
                                         <div class="card-sa col-12 mb-3 d-flex flex-row">
                                             <div class="col-3 mx-auto">
                                                 <label class="d-block" for="">Gambar 1</label>
-                                                <img src="{{ asset('storage/gambarprof/' . $data->gambar1) }}"
+                                                <img src="{{ asset('storage/' . $data->gambar1) }}"
                                                     class="img-fluid rounded-start col-10 mx-auto" alt="..."
-                                                    style="border-radius: 6px; width:80%;">
+                                                    style="border-radius: 6px; width:80%; height: 70%;">
                                                 <input class="ms-0" type="file" style="margin: 3% 0% 3% 0%;"
                                                     name="gambar1">
                                             </div>
@@ -40,7 +40,7 @@
                                                 <label for="" class="d-block">Gambar 2</label>
                                                 <img src="{{ asset('storage/' . $data->gambar2) }}"
                                                     class="img-fluid rounded-start col-10 mx-auto" alt="..."
-                                                    style="border-radius: 6px; width:80%;">
+                                                    style="border-radius: 6px; width:80%; height: 70%;">
                                                 <input class="ms-0" type="file" style="margin: 3% 0% 3% 0%;"
                                                     name="gambar2">
                                             </div>
@@ -48,7 +48,7 @@
                                                 <label for="" class="d-block">Gambar 3</label>
                                                 <img src="{{ asset('storage/' . $data->gambar3) }}"
                                                     class="img-fluid rounded-start col-10 mx-auto" alt="..."
-                                                    style="border-radius: 6px; width:80%;">
+                                                    style="border-radius: 6px; width:80%; height: 70%;">
                                                 <input class="ms-0" type="file" style="margin: 3% 0% 3% 0%;"
                                                     name="gambar3">
                                             </div>
