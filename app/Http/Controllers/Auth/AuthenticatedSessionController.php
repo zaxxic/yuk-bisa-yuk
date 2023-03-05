@@ -36,7 +36,7 @@ class AuthenticatedSessionController extends Controller
         
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('dash');
+            return redirect()->intended('/dashboardadmindesa');
         }
 
         return back()->withErrors(['email' => 'Email atau password salah atau akun tidak aktif.',

@@ -51,7 +51,7 @@ Route::middleware('auth')->group(function () {
         });
         
         Route::middleware(['auth:sanctum','verified','admindesa'])->group(function(){
-        Route::get('/dashboardadminweb',[DashboardController::class, 'dashboard'])->name('dashboard');
+        Route::get('/dashboardadmindesa',[DashboardController::class, 'dashboard'])->name('dashboard');
 
 
         // berita
