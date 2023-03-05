@@ -57,7 +57,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <input type="text" class="form-control" name="password" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" placeholder="Password">
                                 </div>
                             </div>
                             <div class="row">
@@ -96,7 +96,7 @@
                                 
                                 <div class="col-12 ">
                                     <div class="custom-file">
-                                        <label  style="margin-top: 20px">Unggah Persetujuan</label>
+                                        <label  style="margin-top: 20px">Unggah logo</label>
                                         <input type="file" class="" style="" name="logo" >
                                     </div>
                                 </div>

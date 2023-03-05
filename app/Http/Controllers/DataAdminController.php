@@ -20,7 +20,7 @@ class DataAdminController extends Controller
     public function DataAdmin()
     {
           $pending = User::where('status', 'pending')->paginate(2);
-        $pending1 = User::where('status', 'aktif')->paginate(9);
+        $pending1 = User::where('status', 'aktif')->paginate(2);
 
       
         // $table->string('nama');
@@ -49,6 +49,7 @@ class DataAdminController extends Controller
 
     if ($data->status == 'pending') {
         $data->status = 'aktif';
+
         Mail::to($data->email)->send(new kirimEmail());
         $user = desa_profile::create([
             'user_id' => $id,

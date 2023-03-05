@@ -3,7 +3,7 @@
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Struktur Karang Taruna</h1>
+    <h1>Data Daftar Admin Desa</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
@@ -20,7 +20,7 @@
         <div class="card">
           
           <div class="card-body">
-            <h5 class="card-title">Teriama Pendaftaraam</h5>  
+            <h5 class="card-title">Terima Pendaftaran</h5>  
             <input type="text" class="form-control mb-3" placeholder="Search&hellip;">
             
             
@@ -35,8 +35,8 @@
                   <th scope="col">Propinsi</th>
                   <th scope="col">Kabupaten</th>
                   <th scope="col">Kecamatan</th>
-                  <th scope="col">Kode Pos</th>
-                  <th scope="col">Photo Surat Persetujuan</th>
+                  <th scope="col">Pos</th>
+                  <th scope="col">Photo Surat</th>
                   <th scope="col">logo desa</th>
                   <th scope="col">Aksi</th>
 
@@ -54,25 +54,29 @@
                   <td>{{$item->kabupaten}}</td>                       
                   <td>{{$item->kecamatan}}</td>                       
                   <td>{{$item->kode_pos}}</td>                       
-                  <td><img style="margin-left: 0px;"  src="img/{{$item->gambar}}" width="100px" height="100px" alt=""></td>   
-                  <td><img style="margin-left: 0px;"  src="logo/{{$item->logo}}" width="100px" height="100px" alt=""></td>   
-                  <td> <a href="{{ route('user.show', $item->id) }}"><button class="button-79" role="button">lihat</button></a> <br>
+                  <td><img style="margin-left:8px ;" class=""  src="img/{{$item->gambar}}" width="120px" height="120px" alt=""></td>   
+                  <td><img style="margin-left: 0px;"  src="logo/{{$item->logo}}" width="120px" height="120px" alt=""></td>   
+                  <td> <a href="{{ route('user.show', $item->id) }}"><button class="btn btn-primary" style="font-size: 15px;margin-bottom:7px" role="button">lihat</button></a>
                     <form action="{{ route('update.status', $item->id) }}" method="post">
                       @csrf
-                    <a href=""><button class="button-79" type="submit" role="button">Terima</button>
+                    <button type="submit" style="font-size: 15px;margin-bottom:7px" class="btn btn-primary">Teriama</button>
                     </form>  
                                    
                     <form action="{{ route('deleteadmin', $item->id) }}" method="post">
                       @csrf
                       @method('delete')
-                    <a href=""><button class="button-79" type="submit" role="button">Tolak</button>
+                      <button type="button" style="font-size: 15px" class="btn btn-primary">Tolak</button>
                     </form>
                 </tr>
               @endforeach
+              
 
                 
               </tbody>
             </table>
+            <div class="d-flex justify-content-center">
+              {{ $data->links('pagination::bootstrap-4') }}
+          </div>
             <!-- End Primary Color Bordered Table -->
 
           </div>
@@ -89,7 +93,7 @@
         <div class="card">
           
           <div class="card-body">
-            <h5 class="card-title">Edit Pendaftaran</h5>  
+            <h5 class="card-title">Edit Admin Desa</h5>  
             <input type="text" class="form-control mb-3" placeholder="Search&hellip;">
             
             
@@ -104,8 +108,8 @@
                   <th scope="col">Propinsi</th>
                   <th scope="col">Kabupaten</th>
                   <th scope="col">Kecamatan</th>
-                  <th scope="col">Kode Pos</th>
-                  <th scope="col">Photo Surat Persetujuan</th>
+                  <th scope="col">Pos</th>
+                  <th scope="col">Photo Surat</th>
                   <th scope="col">logo desa</th>
                   <th scope="col">Aksi</th>
 
@@ -122,21 +126,27 @@
                 <td>{{$item->kabupaten}}</td>                       
                 <td>{{$item->kecamatan}}</td>                       
                 <td>{{$item->kode_pos}}</td>                       
-                <td><img style="margin-left: 0px;"  src="img/{{$item->gambar}}" width="100px" height="100px" alt=""></td>   
-                <td><img style="margin-left: 0px;"  src="logo/{{$item->logo}}" width="100px" height="100px" alt=""></td>   
-                <td> <a href="{{ route('user.show', $item->id) }}"><button class="button-79" role="button">lihat</button></a> <br>
+                <td><img style="margin-left:8px ;" class=""  src="img/{{$item->gambar}}" width="120px" height="120px" alt=""></td>
+                <td><img style="margin-left:8px ;" class=""  src="img/{{$item->logo}}" width="120px" height="120px" alt=""></td>   
+                <td> <a href="{{ route('user.show', $item->id) }}"><button style="font-size: 15px;margin-bottom:7px" class="btn btn-primary" role="button">lihat</button></a>
 
                   <form action="{{ route('deleteadmin', $item->id) }}" method="post">
                     @csrf
                     @method('delete')
-                  <a href=""><button class="button-79" type="submit" role="button">hapus</button>
+                  <a href=""><button style="font-size: 15px" class="btn btn-primary" type="submit" role="button">hapus</button>
                   </form>
               </td>              
                 
               </tr>
+              <div class="pagination">
+
+</div>
             @endforeach
             </table>
             <!-- End Primary Color Bordered Table -->
+            <div class="d-flex justify-content-center">
+              {{ $data2->links('pagination::bootstrap-4') }}
+          </div>
 
           </div>
         </div>

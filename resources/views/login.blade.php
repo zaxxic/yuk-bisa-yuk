@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DESA.COM</title>
-    
+
 <link href="https://i.postimg.cc/wj308LVk/images.png" rel="shortcut icon" type="image/png">
     <link rel="stylesheet" type="text/css" href="reg/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="reg/css/fontawesome-all.min.css">
@@ -22,12 +22,12 @@
                 <div class="bg"></div>
                 <div class="info-holder simple-info" >
                     <div><img src="reg/image-reg/graphic6.svg" alt=""></div>
-                    
+
                     <div><h3>Login</h3></div>
                     <div><p>Masukkan email dan password untuk login</p></div>
                 </div>
             </div>
-            
+
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
@@ -41,21 +41,21 @@
                         </div>
                     @endif
                         <div class="form-items" style="margin-left: 250px;">
-                           
 
-                        
+
+
 </div>
             <form action="{{ route('login') }}" method="POST">
             @csrf
                             <div class="row">
                                 <div class="col-12">
                                     <input type="text" name="email" class="form-control" placeholder="Email Desa">
-                                   
+
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                   
+
                                     <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                             </div>
@@ -65,8 +65,7 @@
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-button text-right">
-                                        {{-- <button id="submit" type="submit" class="ibtn less-padding" style="background-color: #F26522; color: #ffffff">Login</button> --}}
-                                        <button type="submit">Login</button>
+                                        <button id="submit" type="submit" class="ibtn less-padding" style="background-color: #F26522; color: #ffffff">Login</button>
                                     </div>
                                 </div>
                             </div>
