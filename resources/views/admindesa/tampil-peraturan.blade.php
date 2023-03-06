@@ -25,18 +25,17 @@
                         <h5 class="card-title">Edit Peraturan</h5>
 
                         <!-- Vertical Form -->
-                        <form class="row g-3" action ="/updateperaturan/{{ $data -> id }}" method="POST">
+                        <form class="row g-3" action ="/updateperaturan/{{$data->id}}" method="POST">
                             @csrf
                             <div class="col-12">
-                                <label for="inputNanme4" class="form-label">Peraturan</label>
-                                <input type="text" class="form-control" id="peraturan" name="peraturan" value="{{ $data -> peraturan}}">
+                                <label for="inputNanme4" class="form-label fw-bold">Peraturan</label>
+                                <textarea class="form-control" id="editor" name="peraturan" cols="30" rows="10">{!!$data->peraturan!!}</textarea>
 </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                <button type="submit" class="btn btn-primary">Ubah</button>
                             </div>
                         </form><!-- Vertical Form -->
-                        <a href="/peraturan"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                        <a href="/peraturan"> <button type="submit" class="btn btn-danger">Kembali</button></a>
 
                     </div>
                 </div>
@@ -47,4 +46,10 @@
         </section>
 
     </main>
+@endsection
+@section('editor')
+    <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+       CKEDITOR.replace('editor');
+    </script>
 @endsection

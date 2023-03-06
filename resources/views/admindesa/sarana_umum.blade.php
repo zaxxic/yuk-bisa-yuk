@@ -20,7 +20,7 @@
 
             <div class="card-body">
               <h5 class="card-title">Sarana Umum</h5>
-              <input type="text" class="form-control mb-3" placeholder="Search&hellip;">
+              <input type="text" class="form-control mb-3" placeholder="Cari&hellip;">
 
 
 
@@ -139,8 +139,8 @@
 
                 </tbody>
               </table>
-              </form>
-              <td><a href=""><button class="button-79 ms-3" role="button">simpan</button></a></td>
+              <button type="submit" style="margin-left: 90%" class="btn btn-primary">Simpan</button>
+            </form>
               <!-- End Primary Color Bordered Table -->
             </div>
           </div>

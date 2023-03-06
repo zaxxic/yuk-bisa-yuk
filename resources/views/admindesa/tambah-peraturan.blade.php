@@ -27,7 +27,7 @@
                         <form class="row g-3" action="/insertperaturan" method="POST">
                             @csrf
                             <div class="col-12">
-                                <label for="inputNanme4" class="form-label">Peraturan</label>
+                                <label for="inputNanme4" class="form-label fw-bold">Peraturan</label>
                                 <textarea class="form-control" id="editor" name="peraturan" cols="30" rows="10"></textarea>
                             </div>
                             <div class="text-center">

@@ -279,7 +279,7 @@
               </a>
             </li>
             <li>
-              <a href="products">
+              <a href="pariwisata">
                 <i class="bi bi-circle"></i><span>Pariwisata</span>
               </a>
             </li>
