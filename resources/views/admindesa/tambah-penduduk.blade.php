@@ -1,4 +1,4 @@
-@extends('admindesa.navside')
+3@extends('admindesa.navside')
 
 @section('isi')
     <main id="main" class="main">
@@ -19,7 +19,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Tambah Penduduk</h5>
+                        <h5 class="card-title">Tambah Penduduk</h5> 
 
                         <!-- Vertical Form -->
                         <form class="row g-3" action="/insertpenduduk" method="POST">

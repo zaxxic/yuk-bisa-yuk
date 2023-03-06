@@ -28,6 +28,31 @@
                             </form>
                             <a href="/tambahpenduduk"><button class="btn btn-primary mb-3">Tambah Penduduk</button></a>
 
+                            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                Import Excel
+                              </button>
+                              <div class="modal fade" id="basicModal" tabindex="-1">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title">Basic Modal</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="" enctype="multipart/form-data" method="POST">
+                                            @csrf
+                                            <input type="file">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Kirim</button> 
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                        </form>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div><!-- End Basic Modal-->
+
+
                             <!-- Primary Color Bordered Table -->
                             <table class="table table-bordered border-primary">
                                 <thead>

@@ -1,130 +1,96 @@
-@extends('webadmin.navside')
-@section('isi')
-<main id="main" class="main">
+<?php
 
-  <div class="pagetitle">
-    <h1>Struktur Karang Taruna</h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
-        <li class="breadcrumb-item">Data Admin</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
+namespace App\Http\Controllers\Auth;
 
-  <section class="section">
-    <div class="row">
-      <div class="col-lg-17 ms-auto me-auto">
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
+use Illuminate\View\View;
+
+class RegisteredUserController extends Controller
+{
+    /**
+     * Display the registration view.
+     */
+    public function create(): View
+    {
+        return view('register');
+    }
+
+    /**
+     * Handle an incoming registration request.
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function store(Request $request): RedirectResponse
+    {
+        // dd($request);
+        $this->validate($request,
+            [
+                'name'=>'required',
+                'email'=>'required|unique:users,email',
+                'password'=>'required|min:4',
+                'gambar'=>'required|image|mimes:jpeg,png,jpg,svg',
+                'logo'=>'required|image|mimes:jpeg,jpg,png',
+                'kode_pos'=>'required|min:5|max:8',
+                'koordinat'=>'required'
+            ],[
+                'name.required'=>'Nama harus di isi',
+                'password.required'=>'Password harus di isi',
+                'password.min'=>'Password minimal 4 huruf',
+                'kode_pos.min'=>'Kode pos minimal 5 angka',
+                'kode_pos.max'=>'Kode pos minimal 8 angka',
+                'email.unique'=>'Email ada yang sama',
+                'gambar.mimes'=>'Gambar harus dalam bentuk jpeg,png,jpg,svg',
+                'gambar.image'=>'Yang di inputkan harus gambar',
+                'logo.mimes'=>'Gambar harus dalam bentuk jpeg,png,jpg,svg',
+                'logo.image'=>'Yang di inputkan harus gambar',
+                
+            ]
+
+        );
+
+        // dd('bb');
+        
+        $gambar = '';
+        if($request->hasFile('gambar')){
+            $request->file('gambar')->move('img/',$request->file('gambar')->getClientOriginalName());
+            $gambar = $request->file('gambar')->getClientOriginalName();
+        }
+        $logo = '';
+        if($request->hasFile('logo')){
+            $request->file('logo')->move('logo/',$request->file('logo')->getClientOriginalName());
+            $logo = $request->file('logo')->getClientOriginalName();
+        }
+
+        $user = User::create([
+            
+        
+            'name' => $request->name,
+            'email' => $request->email,
+            'provinsi' => $request->provinsi,
+            'kabupaten' => $request->kabupaten,
+            'gambar' => $gambar,
+            'logo' => $logo,
+            'kabupaten' => $request->kabupaten,
+            'kecamatan' => $request->kecamatan,
+            'kode_pos' => $request->kode_pos,
+            'koordinat' => $request->koordinat,
+            'password' => Hash::make($request->password),
+            
+        ]);
         
         
-        <div class="card">
-          
-          <div class="card-body">
-            <h5 class="card-title">Teriama Pendaftaraam</h5>  
-            <input type="text" class="form-control mb-3" placeholder="Search&hellip;">
-            
-            
-            
-           
-            <!-- Primary Color Bordered Table -->
-            <table class="table table-bordered border-primary">
-              <form action="{{ route('move-data') }}" method="POST">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nama Desa</th>
-                  <th scope="col">Propinsi</th>
-                  <th scope="col">Kabupaten</th>
-                  <th scope="col">Kecamatan</th>
-                  <th scope="col">Photo Surat Persetujuan</th>
-                  <th scope="col">Aksi</th>
-
-
-                  
-                
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($data as $item)
-                <tr>
-                  <th scope="row">{{$loop->iteration}}</th>
-                  <td>{{$item->username}}</td>
-                  <td>{{$item->provinsi}}</td>                       
-                  <td>{{$item->kabupaten}}</td>                       
-                  <td>{{$item->kecamatan}}</td>                       
-                  <td><img style="margin-left: 30px;"  src="img/{{$item->gambar}}" width="100px" height="100px" alt=""></td>  
-                  <input type="hidden" name="id" value="{{ $item->id }}"> 
-                  <td> <button><a href=" /data/{{ $item->id }}">View</a></button> <br> <a href="{{route('data.move', $item->id)}}"></a> <a href=""><button class="button-79" type="submit" role="button">Terima</button></a> <a href=""></a> <a href=""><button class="button-79" role="button">Tolak</button></a> <a href=""></a></td>              
-                </tr>
-              @endforeach
-
-                
-              </tbody>
-            </table>
-          </form>
-            <!-- End Primary Color Bordered Table -->
-
-          </div>
-        </div>
-
-      
-  </section>
-
-  <section class="section" style="margin-top: 40px;">
-    <div class="row">
-      <div class="col-lg-17 ms-auto me-auto">
         
-        
-        <div class="card">
-          
-          <div class="card-body">
-            <h5 class="card-title">Edit Pendaftaran</h5>  
-            <input type="text" class="form-control mb-3" placeholder="Search&hellip;">
-            
-            
-            
-           
-            <!-- Primary Color Bordered Table -->
-            <table class="table table-bordered border-primary">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nama Desa</th>
-                  <th scope="col">Propinsi</th>
-                  <th scope="col">Kabupaten</th>
-                  <th scope="col">Kecamatan</th>
-                  <th scope="col">Photo Surat Persetujuan</th>
-                  <th scope="col">Aksi</th>
 
 
-                  
-                
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Ngijo</td>
-                  <td>Jatim</td>                       
-                  <td>Malang</td>                       
-                  <td>karangploso</td>                       
-                  <td><img style="margin-left: 30px;"  src="img/surat.webp" width="100px" height="100px" alt=""></td>   
-                  <td><a href="lihat-desa.html"></a> <br> <a href=""></a> <a href="lihat-desa.html"><button class="button-79" role="button">Lihat</button></a> <a href=""></a> <a href=""><button class="button-79" role="button">Hapus</button></a> <a href=""></a></td>              
-                </tr>
-              
 
-                
-              </tbody>
-            </table>
-            <!-- End Primary Color Bordered Table -->
-
-          </div>
-        </div>
-       
-      
-  </section>
-
-  
-
-</main><!-- End #main -->
-@endsection
+        return redirect('login')->with('status', 'Email atau Password salah');
+    }
+}
