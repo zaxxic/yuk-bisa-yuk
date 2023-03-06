@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\tour;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PariwisataController extends Controller
 {
@@ -48,7 +49,7 @@ class PariwisataController extends Controller
                 'subjudul'  => 'required',
             ]
         );
-        
+        alert()->success('Sukses','Pariwisata berhasil di tambahakan');
         return redirect('pariwisata')->with('success', 'Images uploaded successfully.');
     }
     public function editpar($id)
@@ -89,6 +90,7 @@ class PariwisataController extends Controller
             $data->save();
         }
         $data->update();
+        alert()->success('Sukses','Pariwisata berhasil di edit');
         return redirect('pariwisata')->with('success', 'Images Update Successfully');
     }
     public function deletepariwisata($id)

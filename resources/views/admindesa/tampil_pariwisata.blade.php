@@ -7,7 +7,7 @@
             <h1>Tambah Pariwisata</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/dashboardadmindesa">Home</a></li>
                     <li class="breadcrumb-item"><a href="pariwisata">Pariwisata</a></li>
                     <li class="breadcrumb-item">Tambah Pariwisata</li>
                 </ol>
@@ -17,10 +17,6 @@
         <section class="section">
             <div class="row">
                 <div class="col-lg-6">
-
-
-
-
                 </div>
             </div>
 
@@ -69,16 +65,13 @@
                                 <!-- Quill Editor Default -->
                                 <div class="col-12">
                                     <label for="isi" class="form-label">Isi Pariwisata</label>
-                                    <input type="text" class="form-control" name="isi" id="isi" value="{{ $data->isi }}">
+                                    <textarea class="form-control" id="editor" name="isi" cols="30" rows="10">{!!$data->isi!!}</textarea>
                                 </div>
-
-
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Ubah</button>
                                 </div>
                             </form><!-- Vertical Form -->
-                            <a href="/pariwisata"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                            <a href="/pariwisata"> <button type="submit" class="btn btn-danger">Kembali</button></a>
 
                     </div>
                 </div>
@@ -174,14 +167,8 @@
         return true;
     };
 </script>
-
-
-
     </main>
-
-
 @endsection
-
 @section('scripts')
   <script>
     $(document).ready(function() {
@@ -194,4 +181,10 @@
       });
     });
   </script>
+@endsection
+@section('editor')
+    <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+       CKEDITOR.replace('editor');
+    </script>
 @endsection
