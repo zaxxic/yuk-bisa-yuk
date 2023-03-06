@@ -7,8 +7,8 @@
             <h1>Profil Desa</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                    <li class="breadcrumb-item active">Profil Desa</li>
+                    <li class="breadcrumb-item"><a href="/dashboardadmindesa">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="/profil_desa">Profil Desa</a></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -120,7 +120,7 @@
                                             </div>
                                             <br>
                                             <div class="text-center">
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="submit" class="btn btn-primary" >Simpan</button>
                                             </div>
                                         </div><!-- End Card with an image on left -->
 
