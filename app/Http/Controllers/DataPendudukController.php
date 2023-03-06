@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\resident;
-
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
+use App\Exports\DataPendudukExport;
+use App\Http\Controllers\Controller;
+use App\Imports\DataPendudukImport;
 use Illuminate\Support\Facades\Auth;
+
+use Maatwebsite\Excel\Facades\Excel;
+use RealRashid\SweetAlert\Facades\Alert;
+use Maatwebsite\Excel\Facades\Excel as FacadesExcel;
 
 class DataPendudukController extends Controller
 {
@@ -51,5 +56,18 @@ class DataPendudukController extends Controller
         $data = resident::where('nama', 'LIKE', '%' . $keyword .'%')
         ->paginate(10);
         return view('admindesa.data_penduduk', compact('data'));
+    }
+
+    public function exportexcel(){
+        return Excel::download(new DataPendudukExport,'dataPenduduk.xlsx');
+    }
+    public function importexcel(Request $request)
+    {
+        $data = $request->file('file');
+        $namafile = $data->getClientOriginalName();
+        $data->move('data_penduduk',$namafile);
+
+        Excel::import(new DataPendudukImport,\public_path('/data_penduduk/'.$namafile));
+        return redirect('data_penduduk');
     }
 }

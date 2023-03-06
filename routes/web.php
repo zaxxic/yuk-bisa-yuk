@@ -15,7 +15,6 @@ use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\StrukturDesaController;
 use App\Http\Controllers\StrukturKarangController;
 use App\Http\Controllers\StrukturPKKController;
-use App\Http\Controllers\SaranaUmumController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -44,7 +43,7 @@ Route::middleware('auth')->group(function () {
            Route::get('/dataadmin', [DataAdminController::class, 'DataAdmin']);
            Route::get('/dashwebadmin', [DashAdminController::class, 'dashadmin']);
            Route::post('/update-status/{id}', [DataAdminController::class, 'updateStatus'])->name('update.status');
-           Route::get('/deleteadmin/{id}', [DataAdminController::class, 'deleteadmin'])->name('deleteadmin');
+           Route::delete('/deleteadmin/{id}', [DataAdminController::class, 'deleteadmin'])->name('deleteadmin');
            Route::get('/user/{id}', [DataAdminController::class, 'show'])->name('user.show');
            Route::get('/cek', [DataAdminController::class, 'lihat']);
            
@@ -79,6 +78,8 @@ Route::post('/insertpenduduk',[DataPendudukController::class, 'insertpenduduk'])
 Route::get('/tampilpenduduk/{id}',[DataPendudukController::class, 'tampilpenduduk'])->name('tampilpenduduk');
 Route::post('/updatependuduk/{id}',[DataPendudukController::class, 'updatependuduk'])->name('updatependuduk');
 Route::get('/deletependuduk/{id}',[DataPendudukController::class, 'deletependuduk'])->name('deletependuduk');
+Route::get('/exportexcel',[DataPendudukController::class,'exportexcel'])->name('exportexcel');
+Route::post('/importexcel',[DataPendudukController::class,'importexcel'])->name('importexcel');
 
 // pariwisatas
 Route::get('/pariwisata',[PariwisataController::class,'pariwisata'])->name('pariwisata');
@@ -88,9 +89,6 @@ Route::get('/editpar/{id}',[PariwisataController::class,'editpar'])->name('editp
 Route::post('/editpariwisata/{id}',[PariwisataController::class,'editpariwisata'])->name('editpariwisata');
 Route::get('/deletepariwisata/{id}',[PariwisataController::class,'deletepariwisata'])->name('deletepariwisata');
 
-// sarana
-Route::get('/sarana_umum',[SaranaUmumController::class,'sarana'])->name('sarana_umum');
-Route::post('/updatesarana/{id}',[SaranaUmumController::class, 'updatesarana'])->name('updatesarana');
 
 
 // penghargaan
