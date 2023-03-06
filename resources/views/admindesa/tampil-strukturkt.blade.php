@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Edit</button>
+                                <button type="submit" class="btn btn-primary">Ubah</button>
                             </div>
                         </form><!-- Vertical Form -->
                         <a href="/struktur_karang"> <button type="submit" class="btn btn-danger">Kembali</button></a>

@@ -57,26 +57,20 @@
                                     <label for="subjudul" class="form-label">Subjudul Penghargaan</label>
                                     <input type="text" class="form-control" name="subjudul" id="subjudul" value="{{ $data->subjudul }}">
                                 </div>
-                                <div class="col-12">
-                                    <label for="isi" class="form-label">Isi Penghargaan</label>
-                                    <input type="text" class="form-control" name="isi" id="isi" value="{{ $data->isi }}">
-                                </div>
                                 <div class="col-12 mb-4">
                                     <label for="tanggal" class="form-label">Tanggal</label>
                                     <input type="date" class="form-control" name="tanggal" id="tanggal" value="{{ $data->tanggal }}">
                                 </div>
-
-
-                                <!-- Quill Editor Default -->
-
-
+                                <div class="col-12">
+                                    <label for="isi" class="form-label">Isi Penghargaan</label>
+                                    <textarea class="form-control" id="editor" name="isi" cols="30" rows="10" placeholder="Tuliskan isi pengahargaan disini">{!!$data->isi!!}</textarea>
+                                </div>
 
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Ubah</button>
                                 </div>
                             </form><!-- Vertical Form -->
-                            <a href="/penghargaan"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                            <a href="/penghargaan"> <button type="submit" class="btn btn-danger">Kembali</button></a>
 
                     </div>
                 </div>
@@ -192,4 +186,10 @@
       });
     });
   </script>
+@endsection
+@section('editor')
+    <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+       CKEDITOR.replace('editor');
+    </script>
 @endsection

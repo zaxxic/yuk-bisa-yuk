@@ -43,7 +43,7 @@
                                     <div class="upload__box">
                                         <div class="upload__btn-box">
                                             <label class="upload__btn">
-                                                <p class="mb-0">Upload images</p>
+                                                <p class="mb-0">Masukkan Gambar</p>
                                                 <input name="gambar[]" type="file" multiple="" data-max_length="20"
                                                     class="upload__inputfile">
                                             </label>
@@ -64,21 +64,15 @@
                                     <label for="tanggal" class="form-label">Tanggal</label>
                                     <input type="date" class="form-control" name="tanggal" id="tanggal">
                                 </div>
-                                <label for="isiberita" class="col-sm-2 col-form-label">Isi Berita</label>
-
-
-                                <!-- Quill Editor Default -->
-                                <textarea name="isi"     class="quill-editor-default">
-
-                                </textarea>
-
-
+                                <div class="col-12">
+                                    <label for="isiberita" class="col-sm-2 col-form-label">Isi Berita</label>
+                                    <textarea class="form-control" id="editor" name="isi" cols="30" rows="10" placeholder="Tuliskan isi berita disini"></textarea>
+                                </div>
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Tambahkan</button>
                                 </div>
                             </form><!-- Vertical Form -->
-                            <a href="berita.html"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                            <a href="berita.html"> <button type="submit" class="btn btn-danger"> Kembali</button></a>
 
                     </div>
                 </div>
@@ -179,4 +173,10 @@
       });
     });
   </script>
+@endsection
+@section('editor')
+    <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+       CKEDITOR.replace('editor');
+    </script>
 @endsection

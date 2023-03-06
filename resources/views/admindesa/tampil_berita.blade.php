@@ -4,12 +4,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Tambah Berita</h1>
+            <h1>Edit Berita</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
                     <li class="breadcrumb-item"><a href="berita">Berita</a></li>
-                    <li class="breadcrumb-item">Tambah Berita</li>
+                    <li class="breadcrumb-item">Edit Berita</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -61,21 +61,15 @@
                                     <label for="tanggal" class="form-label">Tanggal</label>
                                     <input type="date" class="form-control" name="tanggal" id="tanggal" value="{{ $data->tanggal }}">
                                 </div>
-                                <label for="isiberita" class="col-sm-2 col-form-label">Isi Berita</label>
-
-
-                                <!-- Quill Editor Default -->
-                                <textarea name="isi" value="{{ $data->isi }}"    class="quill-editor-default">
-
-                                </textarea>
-
-
+                                <div class="col-12">
+                                    <label for="isiberita" class="col-sm-2 col-form-label">Isi Berita</label>
+                                    <textarea class="form-control" id="editor" name="isi" cols="30" rows="10" placeholder="Tuliskan isi berita disini">{!!$data->isi!!}</textarea>
+                                </div>
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Ubah</button>
                                 </div>
                             </form><!-- Vertical Form -->
-                            <a href="berita.html"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                            <a href="/berita"> <button type="submit" class="btn btn-danger">Kembali</button></a>
 
                     </div>
                 </div>
@@ -171,10 +165,11 @@
         return true;
     };
 </script>
-
-
-
     </main>
-
-
+@endsection
+@section('editor')
+    <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+       CKEDITOR.replace('editor');
+    </script>
 @endsection

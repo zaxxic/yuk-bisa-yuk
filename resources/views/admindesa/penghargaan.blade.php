@@ -1,5 +1,6 @@
 @extends('admindesa.navside')
 @section('isi')
+@include('sweetalert::alert')
 <main id="main" class="main">
 
     <div class="pagetitle">
@@ -28,7 +29,7 @@
               <p class="card-text">{{ $row->subjudul }}</p>
               <div class="d-flex">
               <a href="/editpeng/{{ $row->id }}" style="margin-left: 50px;" type="button" class="btn btn-primary btn-sm  ">Edit</a>
-              <a href="/deletepenghargaan/{{ $row->id }}" style="margin-left: 8px;" type="button" class="btn btn-primary btn-sm  ">Hapus</a>
+              <a href="#" data-id="{{ $row->id }}" data-nama="{{ $row->judul }}" style="margin-left: 8px;" type="button" class="btn btn-primary btn-sm delete">Hapus</a>
             </div>
             </div>
           </div><!-- End Card with an image on top -->
@@ -42,4 +43,29 @@
     </section>
 
   </main><!-- End #main -->
+@endsection
+@section('script')
+    <script>
+        $('.delete').click(function() {
+            var penghargaanid = $(this).attr('data-id');
+            var nama = $(this).attr('data-nama');
+            swal({
+                    title: "Yakin ?",
+                    text: "Kamu akan menghapus berita dengan judul " + nama + " ",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        window.location = "/deletepenghargaan/" + penghargaanid + ""
+                        swal("Data berhasil di hapus", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Data tidak jadi dihapus");
+                    }
+                });
+        })
+    </script>
 @endsection

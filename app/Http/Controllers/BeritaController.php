@@ -11,7 +11,7 @@ class BeritaController extends Controller
 {
     public function berita()
     {
-        $data = desa_new::where('user_id',Auth::user()->id);
+        $data = desa_new::where('user_id',Auth::user()->id)->paginate(3);
         
         return view('admindesa.berita', ['data' => $data]);
     }
@@ -48,7 +48,7 @@ class BeritaController extends Controller
                 'subjudul'  => 'required',
             ]
         );
-        
+        alert()->success('Sukses','Berita berhasil di tambahakan');
         return redirect('berita')->with('success', 'Images uploaded successfully.');
     }
     public function edit($id)
@@ -77,6 +77,7 @@ class BeritaController extends Controller
             $data->save();
         }
         $data->update($request->all());
+        alert()->success('Sukses','Data berhasil di edit');
         return redirect('berita')->with('success', 'Images Update Successfully');
     }
     public function deleteberita($id)

@@ -52,7 +52,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                <button type="submit" class="btn btn-primary">Tambahkan</button>
                             </div>
                         </form><!-- Vertical Form -->
                         <a href="/struktur_pkk"> <button type="submit" class="btn btn-danger"> Kembali</button></a>
