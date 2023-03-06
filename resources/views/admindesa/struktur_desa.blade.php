@@ -6,9 +6,9 @@
             <h1>Struktur Desa</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
-                    <li class="breadcrumb-item">Kelembagaan</li>
-                    <li class="breadcrumb-item active">Struktur Desa</li>
+                    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/kelembagaan">Kelembagaan</a></li>
+                    <li class="breadcrumb-item active"><a href="/struktur_desa">Struktur Desa</a></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -40,8 +40,7 @@
                                 </table>
                                 <!-- End Primary Color Bordered Table -->
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary" style="margin-left: 90%;">Simpan</button>
                                 </div>
                             </form><!-- Vertical Form -->
 
