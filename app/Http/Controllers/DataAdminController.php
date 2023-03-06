@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kt_structure;
 use App\Models\lembaga_structure;
+use App\Models\public_facility;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ActivationMail;
 use App\Mail\kirimEmail;
@@ -63,6 +64,24 @@ class DataAdminController extends Controller
             'batasselatan' => 'contoh',
             'batastimur' => 'contoh',
             'batasbarat' => 'contoh',
+        ]);
+
+        $user = public_facility::create([
+            'user_id' => $id,
+            'rw'=> 0,
+            'rt'=> 0,
+            'paud'=> 0,
+            'tk'=> 0,
+            'sd'=> 0,
+            'smp'=> 0,
+            'sma'=> 0,
+            'rumah'=> 0,
+            'puskesmas'=> 0,
+            'kesehatan'=> 0,
+            'posyandu'=> 0,
+            'kb'=> 0,
+            'dokter'=> 0,
+            'bidan'=> 0,
         ]);
 
         $user = pkk_structure::create([
