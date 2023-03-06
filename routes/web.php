@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
            Route::get('/dataadmin', [DataAdminController::class, 'DataAdmin']);
            Route::get('/dashwebadmin', [DashAdminController::class, 'dashadmin']);
            Route::post('/update-status/{id}', [DataAdminController::class, 'updateStatus'])->name('update.status');
-           Route::delete('/deleteadmin/{id}', [DataAdminController::class, 'deleteadmin'])->name('deleteadmin');
+           Route::get('/deleteadmin/{id}', [DataAdminController::class, 'deleteadmin'])->name('deleteadmin');
            Route::get('/user/{id}', [DataAdminController::class, 'show'])->name('user.show');
            Route::get('/cek', [DataAdminController::class, 'lihat']);
            
