@@ -10,6 +10,7 @@ use App\Models\desa_rule;
 use App\Models\desa_new;
 use App\Models\Product;
 use App\Models\resident;
+use App\Models\public_facility;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -23,6 +24,7 @@ class DashboardController extends Controller
         $jumlah_berita = desa_new::all()->count();
         $jumlah_product = Product::all()->count();
         $jumlah_penduduk = resident::all()->count();
-        return view('admindesa.dashboard')->with('jumlah_pkk', $jumlah_pkk) ->with ('jumlah_struktur',$jumlah_struktur) ->with ('jumlah_kt', $jumlah_kt) -> with ('jumlah_peraturan',$jumlah_peraturan) ->with ('jumlah_berita', $jumlah_berita) ->with ('jumlah_product', $jumlah_product) -> with('jumlah_penduduk', $jumlah_penduduk);
+        $jumlah_sarana = public_facility::all()->count();
+        return view('admindesa.dashboard')->with('jumlah_pkk', $jumlah_pkk) ->with ('jumlah_struktur',$jumlah_struktur) ->with ('jumlah_kt', $jumlah_kt) -> with ('jumlah_peraturan',$jumlah_peraturan) ->with ('jumlah_berita', $jumlah_berita) ->with ('jumlah_product', $jumlah_product) -> with('jumlah_penduduk', $jumlah_penduduk) -> with('jumlah_sarana', $jumlah_sarana);
     }
 }

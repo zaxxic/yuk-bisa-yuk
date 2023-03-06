@@ -125,7 +125,7 @@
                           </div>
                            <div class="ps-3">
                              <a href="sarana-umum.html"> <h6>Sarana</h6> </a>
-                             <h3>0</h3>
+                             <h3>{{ $jumlah_sarana }}</h3>
                           </div>
                         </div>
                       </div>
