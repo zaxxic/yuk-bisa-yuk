@@ -15,6 +15,7 @@ use App\Http\Controllers\ProfilDesaController;
 use App\Http\Controllers\StrukturDesaController;
 use App\Http\Controllers\StrukturKarangController;
 use App\Http\Controllers\StrukturPKKController;
+use App\Http\Controllers\SaranaUmumController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -87,6 +88,9 @@ Route::get('/editpar/{id}',[PariwisataController::class,'editpar'])->name('editp
 Route::post('/editpariwisata/{id}',[PariwisataController::class,'editpariwisata'])->name('editpariwisata');
 Route::get('/deletepariwisata/{id}',[PariwisataController::class,'deletepariwisata'])->name('deletepariwisata');
 
+// sarana
+Route::get('/sarana_umum',[SaranaUmumController::class,'sarana'])->name('sarana_umum');
+Route::post('/updatesarana/{id}',[SaranaUmumController::class, 'updatesarana'])->name('updatesarana');
 
 
 // penghargaan

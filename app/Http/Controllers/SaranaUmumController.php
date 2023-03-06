@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\public_facility;
-
 use App\Http\Controllers\Controller;
+use App\Models\public_facility;
 use Illuminate\Http\Request;
 
 class SaranaUmumController extends Controller
 {
     public function sarana()
     {
-        $data = public_facility::all();
+        $data=public_facility::first();
         return view('admindesa.sarana_umum', compact('data'));
     }
-    public function updatesarana(Request $request,$id){
-        $data = public_facility::find($id);
+    public function updatesarana(Request $request, $id)
+    {
+
+        $data=public_facility::find($id);
         $data->update([
             'rw'=>$request->rw,
             'rt'=>$request->rt,
@@ -32,7 +33,7 @@ class SaranaUmumController extends Controller
             'dokter'=>$request->dokter,
             'bidan'=>$request->bidan,
         ]);
-        $data->save();
-        return redirect('sarana_umum');
+        alert()->success('Sukses','Data berhasil di edit');
+        return redirect()->back();
     }
 }

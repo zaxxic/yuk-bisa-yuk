@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('public_facilities', function (Blueprint $table) {
             $table->id();
-            // $table->foreignId('profile_id');
-            // $table->foreign('profile_id')
-            // ->references('id')
-            // ->on('desa_profiles')
-            // ->onDelete('restrict')
-            // ->onUpdate('restrict');
-            // $table->string('nama');
+            $table->foreignId('user_id')->nullable();
+            $table->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('restrict')
+            ->onUpdate('restrict');
             $table->integer('rw');
             $table->integer('rt');
             $table->integer('paud');
