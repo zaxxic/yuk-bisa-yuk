@@ -4,12 +4,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Tambah Pariwisata</h1>
+            <h1>Edit Pariwisata</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/dashboardadmindesa">Home</a></li>
                     <li class="breadcrumb-item"><a href="pariwisata">Pariwisata</a></li>
-                    <li class="breadcrumb-item">Tambah Pariwisata</li>
+                    <li class="breadcrumb-item">Edit Pariwisata</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -31,7 +31,7 @@
                             @csrf
                             <!-- Vertical Form -->
                             <form class="row g-3">
-                                <label for="defaultFormControlInput" class="form-label mb-3">Gambar</label>
+                                <label for="defaultFormControlInput" class="form-label fw-bold mb-3">Gambar</label>
                                 <div class="mb-3 row">
                                     <?php $key = 0; ?>
                                     @foreach (json_decode($data->gambar) as $gambar)
@@ -46,25 +46,25 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <label for="judul" class="form-label">Judul Pariwisata</label>
+                                    <label for="judul" class="form-label fw-bold">Judul Pariwisata</label>
                                     <input type="text" class="form-control" name="judul" id="judul" value="{{ $data->judul }}">
                                 </div>
                                 <div class="col-12">
-                                    <label for="subjudul" class="form-label">Subjudul Pariwisata</label>
+                                    <label for="subjudul" class="form-label fw-bold">Subjudul Pariwisata</label>
                                     <input type="text" class="form-control" name="subjudul" id="subjudul" value="{{ $data->subjudul }}">
                                 </div>
                                 <div class="col-12">
-                                    <label for="koordinat" class="form-label">Koordinat Pariwisata</label>
+                                    <label for="koordinat" class="form-label fw-bold">Koordinat Pariwisata</label>
                                     <input type="text" class="form-control" name="koordinat" id="koordinat" value="{{ $data->koordinat }}">
                                 </div>
                                 <div class="col-12 mb-4">
-                                    <label for="tanggal" class="form-label">Tanggal</label>
+                                    <label for="tanggal" class="form-label fw-bold">Tanggal</label>
                                     <input type="date" class="form-control" name="tanggal" id="tanggal" value="{{ $data->tanggal }}">
                                 </div>
 
                                 <!-- Quill Editor Default -->
                                 <div class="col-12">
-                                    <label for="isi" class="form-label">Isi Pariwisata</label>
+                                    <label for="isi" class="form-label fw-bold">Isi Pariwisata</label>
                                     <textarea class="form-control" id="editor" name="isi" cols="30" rows="10">{!!$data->isi!!}</textarea>
                                 </div>
                                 <div class="text-center mt-4">

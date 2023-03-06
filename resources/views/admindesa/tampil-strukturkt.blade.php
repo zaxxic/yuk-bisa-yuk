@@ -7,7 +7,7 @@
             <h1>Edit Karang Taruna</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="dashboardadmindesa">Home</a></li>
                     <li class="breadcrumb-item"><a href="data-penduduk.html">Struktur Karang Taruna</a></li>
                     <li class="breadcrumb-item active">Edit Karang Taruna</li>
                 </ol>

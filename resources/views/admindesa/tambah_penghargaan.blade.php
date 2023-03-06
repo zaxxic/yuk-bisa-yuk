@@ -10,7 +10,7 @@
             <h1>Tambah Penghargaan</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
+                    <li class="breadcrumb-item"><a href="dashboardadmindesa">Home</a></li>
                     <li class="breadcrumb-item"><a href="penghargaan">Penghargaan</a></li>
                     <li class="breadcrumb-item">Tambah Penghargaan</li>
                 </ol>

@@ -7,7 +7,7 @@
             <h1>Tambah Berita</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
+                    <li class="breadcrumb-item"><a href="dashboardadmindesa">Home</a></li>
                     <li class="breadcrumb-item"><a href="berita">Berita</a></li>
                     <li class="breadcrumb-item">Tambah Berita</li>
                 </ol>

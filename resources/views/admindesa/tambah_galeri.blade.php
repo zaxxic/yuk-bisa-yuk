@@ -6,7 +6,7 @@
       <h1>Tambah Galeri</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="dashboard.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="dashboardadmindesa">Home</a></li>
           <li class="breadcrumb-item"><a href="galeri">Galeri</a></li>
           <li class="breadcrumb-item">Tambah Galeri</li>
         </ol>
