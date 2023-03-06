@@ -7,9 +7,9 @@
             <h1>Struktur Karang Taruna</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item">Kelembagaan</li>
-                    <li class="breadcrumb-item active">Struktur Karang Taruna</li>
+                    <li class="breadcrumb-item"><a href="dashboardadmindesa">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Kelembagaan</a></li>
+                    <li class="breadcrumb-item active"><a href="struktur_karang">Struktur Karang Taruna</a></li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
