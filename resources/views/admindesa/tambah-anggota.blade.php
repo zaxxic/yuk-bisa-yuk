@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Tambahkan</button>
                             </div>
                         </form><!-- Vertical Form -->
                         <a href="/struktur_karang"> <button type="submit" class="btn btn-danger"> Kembali</button></a>

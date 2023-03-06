@@ -47,7 +47,7 @@ class PenghargaanController extends Controller
                 'subjudul'  => 'required',
             ]
         );
-        
+        alert()->success('Sukses','Penghargaan berhasil di tambahakan');
         return redirect('penghargaan')->with('success', 'Images uploaded successfully.');
     }
     public function editpeng($id)
@@ -86,6 +86,7 @@ class PenghargaanController extends Controller
             $data->save();
         }
         $data->update();
+        alert()->success('Sukses','penghargaan berhasil di edit');
         return redirect('penghargaan')->with('success', 'Images Update Successfully');
     }
     public function deletepenghargaan($id)

@@ -7,7 +7,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Tambah Berita</h1>
+            <h1>Tambah Penghargaan</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
@@ -43,7 +43,7 @@
                                     <div class="upload__box">
                                         <div class="upload__btn-box">
                                             <label class="upload__btn">
-                                                <p class="mb-0">Upload images</p>
+                                                <p class="mb-0">Masukkan Gambar</p>
                                                 <input name="gambar[]" type="file" multiple="" data-max_length="20"
                                                     class="upload__inputfile">
                                             </label>
@@ -66,15 +66,14 @@
                                 </div>
                                 <div class="col-12">
                                     <label for="isi" class="form-label">Isi Penghargaan</label>
-                                    <input type="text" class="form-control" name="isi" id="isi" >
+                                    <textarea class="form-control" id="editor" name="isi" cols="30" rows="10" placeholder="Tuliskan isi berita disini"></textarea>
                                 </div>
 
                                 <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Tambahkan</button>
                                 </div>
                             </form><!-- Vertical Form -->
-                            <a href="penghargaan"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                            <a href="penghargaan"> <button type="submit" class="btn btn-danger">Kembali</button></a>
 
                     </div>
                 </div>
@@ -175,4 +174,10 @@
       });
     });
   </script>
+@endsection
+@section('editor')
+    <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+       CKEDITOR.replace('editor');
+    </script>
 @endsection

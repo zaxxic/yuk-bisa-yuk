@@ -17,7 +17,7 @@ class StrukturKarangController extends Controller
     public function strukturkarang()
     {
         $jabatan = Jabatan::all();
-        $data = kt_structure::where('user_id',Auth::user()->id)->paginate(10);
+        $data = kt_structure::where('user_id',Auth::user()->id)->paginate(8);
         return view('admindesa.struktur_karang', compact('data', 'jabatan'));
     }
     public function tambahanggota(){

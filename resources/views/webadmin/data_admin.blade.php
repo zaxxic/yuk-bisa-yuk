@@ -1,5 +1,6 @@
   @extends('webadmin.navside')
 @section('isi')
+@include('sweetalert::alert')
 <main id="main" class="main">
 
   <div class="pagetitle">
@@ -21,7 +22,7 @@
           
           <div class="card-body">
             <h5 class="card-title">Terima Pendaftaran</h5>  
-            <input type="text" class="form-control mb-3" placeholder="Search&hellip;">
+            <input type="text" class="form-control mb-3" placeholder="Cari&hellip;">
             
             
             
@@ -32,17 +33,13 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Nama Desa</th>
-                  <th scope="col">Propinsi</th>
+                  <th scope="col">Provinsi</th>
                   <th scope="col">Kabupaten</th>
                   <th scope="col">Kecamatan</th>
                   <th scope="col">Pos</th>
-                  <th scope="col">Photo Surat</th>
-                  <th scope="col">logo desa</th>
+                  <th scope="col">Foto Surat</th>
+                  <th scope="col">Logo desa</th>
                   <th scope="col">Aksi</th>
-
-
-                  
-                
                 </tr>
               </thead>
               <tbody>
@@ -54,19 +51,14 @@
                   <td>{{$item->kabupaten}}</td>                       
                   <td>{{$item->kecamatan}}</td>                       
                   <td>{{$item->kode_pos}}</td>                       
-                  <td><img style="margin-left:8px ;" class=""  src="img/{{$item->gambar}}" width="120px" height="120px" alt=""></td>   
-                  <td><img style="margin-left: 0px;"  src="logo/{{$item->logo}}" width="120px" height="120px" alt=""></td>   
-                  <td> <a href="{{ route('user.show', $item->id) }}"><button class="btn btn-primary" style="font-size: 15px;margin-bottom:7px" role="button">lihat</button></a>
+                  <td><img style="margin-left:8px ;" class=""  src="{{ asset('storage/' . $item->gambar) }}" width="120px" height="120px" alt=""></td>   
+                  <td><img style="margin-left: 0px;"  src="{{ asset('storage/' . $item->logo) }}" width="120px" height="120px" alt=""></td>   
+                  <td> <a href="{{ route('user.show', $item->id) }}"><button class="btn btn-primary" style="font-size: 15px;margin-bottom:7px" role="button">Lihat</button></a>
                     <form action="{{ route('update.status', $item->id) }}" method="post">
                       @csrf
-                    <button type="submit" style="font-size: 15px;margin-bottom:7px" class="btn btn-primary">Teriama</button>
+                    <button type="submit" style="font-size: 15px;margin-bottom:7px" class="btn btn-primary">Terima</button>
                     </form>  
-                                   
-                    <form action="{{ route('deleteadmin', $item->id) }}" method="post">
-                      @csrf
-                      @method('delete')
-                      <button type="button" style="font-size: 15px" class="btn btn-primary">Tolak</button>
-                    </form>
+                      <a href="#" data-id="{{ $item->id }}" data-nama="{{ $item->name }}" class="delete"><button style="font-size: 15px" class="btn btn-primary" type="submit" role="button">Hapus</button></a>
                 </tr>
               @endforeach
               
@@ -94,7 +86,7 @@
           
           <div class="card-body">
             <h5 class="card-title">Edit Admin Desa</h5>  
-            <input type="text" class="form-control mb-3" placeholder="Search&hellip;">
+            <input type="text" class="form-control mb-3" placeholder="Cari&hellip;">
             
             
             
@@ -105,12 +97,12 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Nama Desa</th>
-                  <th scope="col">Propinsi</th>
+                  <th scope="col">Provinsi</th>
                   <th scope="col">Kabupaten</th>
                   <th scope="col">Kecamatan</th>
                   <th scope="col">Pos</th>
-                  <th scope="col">Photo Surat</th>
-                  <th scope="col">logo desa</th>
+                  <th scope="col">Foto Surat</th>
+                  <th scope="col">Logo desa</th>
                   <th scope="col">Aksi</th>
 
 
@@ -126,15 +118,10 @@
                 <td>{{$item->kabupaten}}</td>                       
                 <td>{{$item->kecamatan}}</td>                       
                 <td>{{$item->kode_pos}}</td>                       
-                <td><img style="margin-left:8px ;" class=""  src="img/{{$item->gambar}}" width="120px" height="120px" alt=""></td>
-                <td><img style="margin-left:8px ;" class=""  src="img/{{$item->logo}}" width="120px" height="120px" alt=""></td>   
-                <td> <a href="{{ route('user.show', $item->id) }}"><button style="font-size: 15px;margin-bottom:7px" class="btn btn-primary" role="button">lihat</button></a>
-
-                  <form action="{{ route('deleteadmin', $item->id) }}" method="post">
-                    @csrf
-                    @method('delete')
-                  <a href=""><button style="font-size: 15px" class="btn btn-primary" type="submit" role="button">hapus</button>
-                  </form>
+                <td><img style="margin-left:8px ;" class=""  src="{{ asset('storage/' . $item->gambar) }}" width="120px" height="120px" alt=""></td>
+                <td><img style="margin-left:8px ;" class=""  src="{{ asset('storage/' . $item->logo) }}" width="120px" height="120px" alt=""></td>   
+                <td> <a href="{{ route('user.show', $item->id) }}"><button style="font-size: 15px;" class="btn btn-primary" role="button">Lihat</button></a>
+                  <a href="#" data-id="{{ $item->id }}" data-nama="{{ $item->name }}" class="delete"><button style="font-size: 15px" class="btn btn-primary" type="submit" role="button">Hapus</button></a>
               </td>              
                 
               </tr>
@@ -157,4 +144,29 @@
   
 
 </main><!-- End #main -->
+@endsection
+@section('script')
+    <script>
+        $('.delete').click(function() {
+            var dataid = $(this).attr('data-id');
+            var nama = $(this).attr('data-nama');
+            swal({
+                    title: "Yakin ?",
+                    text: "Kamu akan menghapus data desa dengan nama " + nama + " ",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        window.location = "/deleteadmin/" + dataid + ""
+                        swal("Data berhasil di hapus", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Data tidak jadi dihapus");
+                    }
+                });
+        })
+    </script>
 @endsection

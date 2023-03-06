@@ -34,9 +34,6 @@
     <link href="{{asset('assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/vendor/simple-datatables/style.css')}}" rel="stylesheet" />
 
-    {{-- summernote --}}
-    <link href="{{asset('assets/vendor/summernote/summernote.min.css')}}" rel="stylesheet"/>
-
     <!-- Template Main CSS File -->
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" />
 
@@ -369,14 +366,6 @@
     <script src="{{asset('assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
     <script src="{{asset('assets/vendor/tinymce/tinymce.min.js')}}"></script>
     <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
-
-    {{-- summernote --}}
-    <script src="{{asset('assets/vendor/summernote/summernote.min.js')}}"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $('#summernote').summernote();
-    })
-    </script>
 
     <!-- Template Main JS File -->
     <script src="{{('assets/js/main.js')}}"></script>

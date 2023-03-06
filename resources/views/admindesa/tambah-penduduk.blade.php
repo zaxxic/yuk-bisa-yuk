@@ -108,10 +108,10 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Tambahkan</button>
                             </div>
                         </form><!-- Vertical Form -->
-                        <a href="/data_desa"> <button type="submit" class="btn btn-danger"> Back</button></a>
+                        <a href="/data_desa"> <button type="submit" class="btn btn-danger">Kemabali</button></a>
                     </div>
                 </div>
             </div>

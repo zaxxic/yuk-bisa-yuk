@@ -15,7 +15,7 @@ class StrukturPKKController extends Controller
     public function strukturpkk()
     {
         $jabatan = Jabatan::all();
-        $data = pkk_structure::where('user_id',Auth::user()->id)->paginate(10);
+        $data = pkk_structure::where('user_id',Auth::user()->id)->paginate(8);
         // dd($data);
         return view('admindesa.struktur_pkk', compact('data', 'jabatan'));
     }

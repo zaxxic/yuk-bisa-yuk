@@ -15,6 +15,7 @@ use App\Models\User;
 use App\Models\webprofile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class DataAdminController extends Controller
 {  

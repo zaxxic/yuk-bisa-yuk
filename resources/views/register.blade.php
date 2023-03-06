@@ -104,7 +104,7 @@
                             </div>
                             <div class="row top-padding">
                                 <div class="col-12 col-sm-6">
-                                    <label for="chk1">Sudah punya akun ? <a href="login.html" style="text-decoration: none;">Kembali ke login</a></label>
+                                    <label for="chk1">Sudah punya akun ? <a href="/login" style="text-decoration: none;">Kembali ke login</a></label>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <div class="form-button text-right">

@@ -28,14 +28,13 @@
                             @csrf
                             <div class="col-12">
                                 <label for="inputNanme4" class="form-label">Peraturan</label>
-                                <input type="text" class="form-control" id="peraturan" name="peraturan">
+                                <textarea class="form-control" id="editor" name="peraturan" cols="30" rows="10"></textarea>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                <button type="submit" class="btn btn-primary">Tambahkan</button>
                             </div>
                         </form><!-- Vertical Form -->
-                        <a href="/peraturan"> <button class="btn btn-danger"> Back</button></a>
+                        <a href="/peraturan"> <button class="btn btn-danger">Kembali</button></a>
 
                     </div>
                 </div>
@@ -46,4 +45,10 @@
         </section>
 
     </main>
+@endsection
+@section('editor')
+    <script src="{{ asset('assets/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+       CKEDITOR.replace('editor');
+    </script>
 @endsection

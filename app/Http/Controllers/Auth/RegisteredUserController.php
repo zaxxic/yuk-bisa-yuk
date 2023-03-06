@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
@@ -58,16 +59,8 @@ class RegisteredUserController extends Controller
 
         // dd('bb');
         
-        $gambar = '';
-        if($request->hasFile('gambar')){
-            $request->file('gambar')->move('img/',$request->file('gambar')->getClientOriginalName());
-            $gambar = $request->file('gambar')->getClientOriginalName();
-        }
-        $logo = '';
-        if($request->hasFile('logo')){
-            $request->file('logo')->move('logo/',$request->file('logo')->getClientOriginalName());
-            $logo = $request->file('logo')->getClientOriginalName();
-        }
+        $gambar = Storage::disk('public')->put('gpersetujuan', $request->file('gambar'));
+        $logo = Storage::disk('public')->put('glogo', $request->file('logo'));
 
         $user = User::create([
             
