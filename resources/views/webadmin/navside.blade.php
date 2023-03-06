@@ -235,6 +235,12 @@
    
 
    @yield('isi')
+
+        {{-- cdn sweetalert --}}
+        <script src="https://code.jquery.com/jquery-3.6.3.slim.js"integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   @yield('script')
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
